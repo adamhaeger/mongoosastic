@@ -21,6 +21,10 @@ npm install mongoosastic
 
 Or add it to your package.json
 
+## Fork info
+
+This fork allows you to pass a regex and an array of fields to the synchronize method in order to strip fields of html before indexing.
+
 ## Usage
 
 To make a model indexed into elastic search simply add the plugin.
