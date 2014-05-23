@@ -25,6 +25,18 @@ Or add it to your package.json
 
 This fork allows you to pass a regex and an array of fields to the synchronize method in order to strip fields of html before indexing.
 
+### Usage
+
+Mongoosastic options now accepts two new options, regex and stripFields. stripFields should be an array of the fields you want to strip for HTML, using the regex.
+
+```javascript
+var regex = /<\/?([a-z][a-z0-9]*)\b[^>]*>/gi;
+
+var stripFields = [ 'body_no', 'body_en', 'body_sp' ];
+
+ArticleSchema.plugin(mongoosastic, { regex: regex, stripFields: stripFields});
+
+
 ## Usage
 
 To make a model indexed into elastic search simply add the plugin.
